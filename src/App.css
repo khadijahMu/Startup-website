@@ -1,0 +1,152 @@
+.App {
+  text-align: center;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+/* Navigation Bar */
+.nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px;
+  background-color: #74c69d;
+  color: white;
+}
+.nav .left {
+  display: flex; 
+  align-items: center; 
+}
+.nav .logo {
+  width: 40px; 
+  height: auto;
+  margin-right: 10px; 
+}
+.nav h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-icon {
+  width: 25px;
+  height: auto;
+}
+/* Body */
+.body {
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center;
+  min-height: calc(100vh - 60px); 
+  background-color: #74c69d; 
+  padding: 20px;
+  gap: 20px; 
+}
+.body img.Group {
+  max-width: 90%; 
+  height: auto;
+  order: 1; 
+}
+.body .text {
+  text-align: center; 
+  max-width: 90%; 
+  order: 2; 
+}
+.body .text p {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #333;
+}
+.body .text h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+/* Desktop Media Query */
+@media (min-width: 768px) {
+  .body {
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 40px;
+    padding-bottom: 150px;
+    gap: 40px;
+  }
+  .body img.Group {
+    max-width: 50%; 
+    margin: 0; 
+  }
+  .body .text {
+    text-align: left;
+    max-width: 50%; 
+    order: 0; 
+  }
+  /* Bottom */
+  .bottom {
+    margin-top: 20px; 
+    display: flex;
+    justify-content: center;
+  }  
+  .btn {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start; 
+    background-color: #fff; 
+    border: 2px solid #4ec5e2; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    font-size: 16px; 
+    color: #000; 
+    font-weight: bold;
+    text-transform: none; 
+    text-align: center; 
+    gap: 10px; 
+  }
+.btn:hover {
+  background-color: #f0f0f0; 
+}
+.btn-icon {
+  width: 170px;
+  height: 48px;
+  gap: 0px;
+  border-radius: 5px 0px 0px 0px;
+  opacity: 1px;
+  margin-right: 10px; 
+}
+.btn span {
+  display: inline-block; 
+  text-align: center; 
+}
+/* Desktop Media Query */
+@media (min-width: 768px) {
+  .bottom {
+    justify-content: flex-start; 
+  }
+}
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
