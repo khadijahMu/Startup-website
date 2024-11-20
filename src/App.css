@@ -252,13 +252,9 @@ body {
   background-color: #000; 
   color: #fff; 
   font-size: 12px; 
-  text-transform: none; 
   padding: 12px 24px;
-  border: none; 
-  transition: background-color 0.3s ease, transform 0.3s ease; 
   text-align: center; 
   gap: 10px; 
-  overflow: hidden; 
   position: relative; 
 }
 /* Learn Icon  */
