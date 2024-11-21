@@ -281,6 +281,288 @@ body {
     padding: 14px 28px;
   }
 }
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+/* Group Section */
+.group {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  padding: 20px;
+  gap: 20px; 
+}
+/* Group Image */
+.group-image {
+  width: 100%; 
+  max-width: 300px; 
+  height: auto;
+}
+/* Group Content */
+.group-content {
+  text-align: left; 
+  width: 100%; 
+  max-width: 600px; 
+}
+/* Group Title */
+.group-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+/* Group Description */
+.group-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 20px;
+}
+/* Learn Button */
+.learn-button {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #000; 
+  color: #fff; 
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  gap: 10px;
+}
+.learn-icon {
+  width: 20px; 
+  height: 20px;
+}
+/* Desktop Media Query */
+@media (min-width: 768px) {
+  .group {
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 40px; 
+  }
+  .group-image {
+    width: 50%; 
+    max-width: 400px; 
+  }
+  .group-content {
+    width: 50%; 
+    text-align: left; 
+  }
+}
+/* Group Two Section */
+.group-two {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  padding: 20px;
+  gap: 20px; 
+}
+/* Group Image */
+.group-two .group-image {
+  width: 100%; 
+  max-width: 300px; 
+  height: auto;
+}
+/* Group Content */
+.group-two .group-content {
+  text-align: left; 
+  width: 100%; 
+  max-width: 600px;
+}
+/* Group Title */
+.group-two .group-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+/* Group Description */
+.group-two .group-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 20px;
+}
+/* Learn Button */
+.group-two .learn-button {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #000; 
+  color: #fff; 
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  gap: 10px; 
+}
+/* Learn Icon */
+.group-two .learn-icon {
+  width: 20px; /* Icon size */
+  height: 20px;
+}
+/* Desktop Media Query */
+@media (min-width: 768px) {
+  .group-two {
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+  .group-two .group-image {
+    width: 50%; 
+    max-width: 400px; 
+    order: 2; 
+  }
+  .group-two .group-content {
+    width: 50%; 
+    text-align: left; 
+    order: 1; 
+  }
+}/* Team Section  */
+.team {
+  text-align: center; 
+  margin: 20px auto; 
+  padding: 20px; 
+}
+/* Team Title Styling */
+.team-title span {
+  color: #74C69D; 
+  font-family: sans-serif; 
+  font-size: 20px; 
+  font-weight: bold; 
+  display: inline-block; 
+  margin-bottom: 10px; 
+}
+/* Team Heading Styling */
+.team-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+/* Team Description Styling */
+.team-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+/* Card Container */
+.card-container {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px; 
+  padding: 20px;
+}
+/* Individual Card */
+.card {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Card Image */
+.card-image {
+  width: 100px; 
+  height: 100px;
+  border-radius: 50%; 
+  margin-bottom: 10px;
+}
+/* Card Content */
+.card-content {
+  text-align: center;
+}
+.card-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+.card-role {
+  font-size: 16px;
+  color: #555;
+}
+/* Desktop Media Query */
+@media (min-width: 768px) {
+  .card-container {
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+  }
+  .card {
+    flex: 1; 
+    max-width: 300px;
+  }
+}
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+/* Footer*/
+.footer {
+  background-color: #74C69D;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+  text-align: center;
+}
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center; 
+  gap: 10px; 
+}
+.icon {
+  width: 30px; 
+  height: 30px;
+}
+/* Footer Text */
+.footer-text {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+}
+/* Desktop Media Query */
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 40px; 
+    text-align: left;
+  }
+  .social-icons {
+    justify-content: flex-start; 
+    gap: 20px; 
+  }
+  .footer-text {
+    margin: 0;
+    text-align: right; 
+  }
+}
+
+
+
 
 
 @keyframes App-logo-spin {
