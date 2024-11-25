@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
@@ -24,50 +24,58 @@ import img21 from './assets/Group 38.svg';
 import img22 from './assets/Group 39.svg';
 import { Link } from 'react-router-dom';
 function Home() {
-    return (
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+  return (
     <div className="App">
-      {/* Nav Bar */}
-        <nav className="nav">
+      {/* Navigation Bar */}
+      <nav className="nav">
         <div className="left">
-            <img src={img1} alt="Logo" className="logo" />
-            <h2>Start</h2>
+          <img src={img1} alt="Logo" className="logo" />
+          <h2>Start</h2>
         </div>
         <div className="right">
-        <ul className="nav-links">
+          {/* Menu Button */}
+          <button className="menu-button" onClick={toggleMenu}>
+            <img src={img2} alt="Menu" className="menu-icon" />
+          </button>
+          {/* Navigation Links */}
+          <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/about-us">About Us</Link></li>
             <li><Link to="/services">Services</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
           </ul>
-            <button className="menu-button">
-            <img src={img2} alt="Menu" className="menu-icon" />
-            </button>
         </div>
-        </nav>
+      </nav>
       {/* Body Section */}
-        <section className="body">
+      <section className="body">
         <div className="text">
-            <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <h4>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum, voluptate culpa nesciunt delectus iste?
-            </h4>
-            <div className="bottom">
+          <h1>Welcome</h1>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+          <h4>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
+            nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum,
+            voluptate culpa nesciunt delectus iste?
+          </h4>
+          <div className="bottom">
             <button className="btn">
-                <span>Explore</span>
+              <span>Explore</span>
             </button>
-            </div>
+          </div>
         </div>
         <img src={img3} alt="Group Illustration" className="group-main" />
-        </section>
+      </section>
       {/* Partners Section */}
-        <section className="partners">
+      <section className="partners">
         <h2 className="partners-title">Partners</h2>
         <h4 className="partners-heading">Lorem Ipsum Dolor</h4>
         <p className="partners-description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         </p>
-        </section>
+      </section>
       {/* Logos Section */}
       <section className="logos">
         <img src={img5} alt="Google Logo" className="logo google" />

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './App.css';
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
 import img4i from './assets/Rectangle.svg';
@@ -19,8 +20,12 @@ import img21 from './assets/Group 38.svg';
 import img22 from './assets/Group 39.svg';
 import img23 from './assets/Frame 43 (4).png';
 function Portfolio() {
+    const [menuOpen, setMenuOpen] = useState(false);
+    const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+    };
     return (
-    <div className="Portfolio">
+    <div className="App">
       {/* Navigation Bar */}
         <nav className="nav">
         <div className="left">
@@ -28,18 +33,20 @@ function Portfolio() {
             <h2>Start</h2>
         </div>
         <div className="right">
-            <ul className="nav-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            </ul>
-            <button className="menu-button">
+          {/* Menu Button */}
+            <button className="menu-button" onClick={toggleMenu}>
             <img src={img2} alt="Menu" className="menu-icon" />
             </button>
+          {/* Navigation Links */}
+            <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            </ul>
         </div>
         </nav>
-      {/* Portfolio Content */}
+       {/* Portfolio Content */}
         <main className="content">
         <p><span>Works</span></p>
         <p>Portfolio</p>
