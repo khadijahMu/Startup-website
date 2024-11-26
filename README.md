@@ -196,6 +196,7 @@ Below are some screenshots to the website
 
 ![Screenshot 2]("C:\Users\AK TechPlus\OneDrive\Pictures\Screenshots\Screenshot 2024-10-23 235801.png")
 ![Screenshot 2]("C:\Users\AK TechPlus\OneDrive\Pictures\Screenshots\Screenshot 2024-11-25 230914.png")
+loom video link- https://www.loom.com/share/29bb3c2151fd41c38f8e6be3c3901c23?sid=88f5f565-d499-475f-aea1-3655a4f0045e
 
 ## License
 
