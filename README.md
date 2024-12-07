@@ -281,7 +281,6 @@ with these simple steps below you can set up the website
 Below are some screenshots to the website
 
 ![Screenshot 1]("C:\Users\AK TechPlus\OneDrive\Pictures\Screenshots\Screenshot 2024-11-25 230616.png")
-
 ![Screenshot 2]("C:\Users\AK TechPlus\OneDrive\Pictures\Screenshots\Screenshot 2024-10-23 235801.png")
 ![Screenshot 2]("C:\Users\AK TechPlus\OneDrive\Pictures\Screenshots\Screenshot 2024-11-25 230914.png")
 ## License
