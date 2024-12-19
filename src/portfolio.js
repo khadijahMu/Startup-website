@@ -65,7 +65,7 @@ function Portfolio() {
       {/* Learn Button */}
         <section className="learn">
         <button className="learn-button">
-            <img src={img4i} alt="Learn Icon" className="learn-icon" />
+            {/* <img src={img4i} alt="Learn Icon" className="learn-icon" /> */}
             <span>Learn More</span>
         </button>
         </section>

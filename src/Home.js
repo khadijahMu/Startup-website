@@ -3,7 +3,7 @@ import './App.css';
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
 import img3 from './assets/Group.png';
-import img4 from './assets/Rectangle.svg';
+// import img4 from './assets/Rectangle.svg';
 import img5 from './assets/XMLID_24_.svg';
 import img6 from './assets/XMLID_1_.svg';
 import img7 from './assets/XMLID_30_.svg';
@@ -62,6 +62,7 @@ function Home() {
           </h4>
           <div className="bottom">
             <button className="btn">
+            {/* <img src={img4} alt="Menu" className="menu-icon" /> */}
               <span>Explore</span>
             </button>
           </div>
@@ -87,7 +88,7 @@ function Home() {
       {/* Learn Button */}
       <section className="learn">
         <button className="learn-button">
-          <img src={img4} alt="Learn Icon" className="learn-icon" />
+          {/* <img src={img4} alt="Learn Icon" className="learn-icon" /> */}
           <span>Learn More</span>
         </button>
       </section>
@@ -100,7 +101,7 @@ function Home() {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum, voluptate culpa nesciunt delectus iste?
           </p>
           <button className="learn-button">
-            <img src={img4} alt="Learn Icon" className="learn-icon" />
+            {/* <img src={img4} alt="Learn Icon" className="learn-icon" /> */}
             <span>Learn More</span>
           </button>
         </div>
@@ -113,7 +114,7 @@ function Home() {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum, voluptate culpa nesciunt delectus iste?
           </p>
           <button className="learn-button">
-            <img src={img4} alt="Learn Icon" className="learn-icon" />
+            {/* <img src={img4} alt="Learn Icon" className="learn-icon" /> */}
             <span>Learn More</span>
           </button>
         </div>
