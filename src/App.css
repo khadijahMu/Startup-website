@@ -141,16 +141,16 @@ body {
   font-size: 16px;
   color: #555;
 }
-/* Desktop Media Query */
 @media (min-width: 768px) {
   .body {
-    flex-direction: row; 
-    justify-content: space-between; 
-    align-items: center; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 40px;
-    padding-bottom: 150px;
-    gap: 40px;
+    padding-bottom: 100px; /* Reduced from 150px to 100px */
+    gap: 20px; /* Reduced from 40px to 20px */
   }
+}
   .body img.Group {
     max-width: 50%; 
     margin: 0; 
@@ -227,7 +227,6 @@ body {
   .bottom {
     justify-content: flex-start; 
   }
-}
 }
 /* Partners */
 .partners {
