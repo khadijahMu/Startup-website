@@ -37,21 +37,21 @@ function OurServices() {
       price: '$100/month',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam.',
-      features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5'],
+      features: ['Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit '],
     },
     {
       title: 'Plus',
       price: '$250/month',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam.',
-      features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5'],
+      features: ['Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit '],
     },
     {
       title: 'Pro',
       price: '$400/month',
       description:
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam.',
-      features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5'],
+      features: ['Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit ', 'Lorem ipsum, dolor sit '],
     },
   ];
   return (
