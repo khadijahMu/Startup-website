@@ -682,6 +682,109 @@ body, img {
     margin: 0;
   }
 }
+/* Plans Section Styles */
+.plans {
+  text-align: center; 
+  padding: 20px; 
+  margin: 20px auto; 
+  max-width: 800px; 
+}
+.plans-title {
+  font-size: 24px; 
+  margin-bottom: 10px; 
+}
+.plans-title span {
+  color: #74C69D; 
+}
+.plans-heading {
+  font-size: 32px; 
+  font-weight: bold; 
+  margin-bottom: 10px; 
+}
+.plans-description {
+  font-size: 16px; 
+  color: #555; 
+  line-height: 1.5; 
+}
+/* Media Query for Desktop Screens */
+@media (min-width: 1024px) {
+  .plans {
+    padding: 40px; 
+    max-width: 1000px; 
+  }
+  .plans-title {
+    font-size: 28px; 
+  }
+  .plans-heading {
+    font-size: 36px; 
+  }
+  .plans-description {
+    font-size: 18px; 
+  }
+}
+.amount-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 400px;
+  background-color: #f9f9f9;
+}
+.amount-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.amount-price {
+  font-size: 24px;
+  color: rgb(1, 14, 1);
+  margin: 10px 0;
+}
+.amount-description {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+.features-list li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.check-icon {
+  height: 16px;
+  margin-right: 8px;
+}
+.btn {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+/* Desktop Media Query */
+@media (min-width: 768px) {
+  .amount-sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .amount-section {
+    max-width: 300px;
+    flex: 1;
+  }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

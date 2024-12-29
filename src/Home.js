@@ -43,10 +43,10 @@ function Home() {
           </button>
           {/* Navigation Links */}
           <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="/portfolio">Portfolio</Link></li>
+                  <li><Link to="/our-services">Services</Link></li> {/* Updated Path */}
+                  <li><Link to="/contact-us">ContactUs</Link></li> {/* Updated Path */}
           </ul>
         </div>
       </nav>
