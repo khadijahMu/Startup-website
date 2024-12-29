@@ -10,7 +10,7 @@ import img19 from './assets/Group 36.svg';
 import img20 from './assets/Group 37.svg';
 import img21 from './assets/Group 38.svg';
 import img22 from './assets/Group 39.svg';
-// Reusable AmountSection Component
+// Reusable Components
 function AmountSection({ title, price, description, features }) {
   return (
     <div className="amount-section">
