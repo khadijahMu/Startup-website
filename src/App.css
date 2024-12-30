@@ -160,7 +160,7 @@ body {
     max-width: 50%; 
     order: 0; 
   }
-.btn {
+.btn- {
   display: flex; 
   align-items: center; 
   background-color: white; 
@@ -783,6 +783,107 @@ body, img {
   .amount-section {
     max-width: 300px;
     flex: 1;
+  }
+}
+/* Contact Us Section */
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+  gap: 20px;
+}
+.contact-us h1,
+.contact-us p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contact-form {
+  width: 90%;
+}
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contact-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+.submit-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+.submit-button:hover {
+  background-color: #333333;
+}
+.mapswrapper {
+  width: 100%;
+}
+.mapswrapper iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 8px;
+}
+/* Mobile-first */
+@media (max-width: 767px) {
+  .contact-us {
+    flex-direction: column; 
+  }
+  .mapswrapper {
+    margin-bottom: 20px; 
+  }
+}
+/* Desktop View */
+@media (min-width: 768px) {
+  .contact-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 20px;
+    align-items: start; 
+  }
+  .contact-form {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-us h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .contact-us p {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .contact-form .form-group {
+    text-align: left; 
+  }
+  .mapswrapper {
+    max-width: 100%;
+  }
+  .mapswrapper iframe {
+    height: 450px; 
   }
 }
 @keyframes App-logo-spin {

@@ -61,7 +61,7 @@ function Home() {
             voluptate culpa nesciunt delectus iste?
           </h4>
           <div className="bottom">
-            <button className="btn">
+            <button className="btn-">
             {/* <img src={img4} alt="Menu" className="menu-icon" /> */}
               <span>Explore</span>
             </button>
