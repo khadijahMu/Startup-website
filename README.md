@@ -25,7 +25,7 @@
 Project Name: start-up website
 ## Live Demo
 
-Check out the live demo of the project: [https://startup-website-1lar.onrender.com](# memory
+Check out the live demo of the project: [https://startup-website-l.onrender.com](# memory
 
 ## Table of Contents
 
@@ -52,7 +52,7 @@ Check out the live demo of the project: [https://startup-website-1lar.onrender.c
 Project Name: start-up website
 ## Live Demo
 
-Check out the live demo of the project: (https://startup-website-1lar.onrender.com)
+Check out the live demo of the project: (https://startup-website-l.onrender.com)
 
 ## Features
 
