@@ -13,6 +13,7 @@ const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false); 
   const [menuOpen, setMenuOpen] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,9 +21,12 @@ const ContactUs = () => {
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Message:", message);
+    setFormSubmitted(true);
+    // Reset the form fields
     setName("");
     setEmail("");
     setMessage("");
+    setTimeout(() => setFormSubmitted(false), 3000);
   };
   return (
     <div className="App">
@@ -51,6 +55,10 @@ const ContactUs = () => {
       <div className="contact-us">
         <h1>Contact Us</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        {/* Feedback Message */}
+        {formSubmitted && (
+          <p className="feedback-message">Thank you! Your message has been sent.</p>
+        )}
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name:</label>
@@ -85,7 +93,7 @@ const ContactUs = () => {
           </div>
           <button type="submit" className="submit-button">Submit</button>
         </form>
-        {/*  Google Map */}
+        {/* Google Map */}
         <div className="mapswrapper" style={{ marginTop: "20px" }}>
           <iframe
             width="800"
