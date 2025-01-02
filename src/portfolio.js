@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
-import img4i from './assets/Rectangle.svg';
 import img3 from './assets/dscdsc 1.png';
 import img4 from './assets/Group 41.png';
 import img5 from './assets/Frame 43 (1).png';

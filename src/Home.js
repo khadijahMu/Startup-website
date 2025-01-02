@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
 import './App.css';
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
@@ -25,33 +26,55 @@ import img22 from './assets/Group 39.svg';
 import { Link } from 'react-router-dom';
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return (
+      <div className="splash-screen">
+        <img src={img1} alt="Loading Logo" className="splash-logo" />
+      </div>
+    );
+  }
   return (
     <div className="App">
-      {/* Navigation Bar */}
-      <nav className="nav">
+          {/* Menu Button */} {/* Navigation Bar */}
+      <motion.nav
+        className="nav"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="left">
           <img src={img1} alt="Logo" className="logo" />
           <h2>Start</h2>
         </div>
         <div className="right">
-          {/* Menu Button */}
           <button className="menu-button" onClick={toggleMenu}>
             <img src={img2} alt="Menu" className="menu-icon" />
           </button>
-          {/* Navigation Links */}
-          <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
+          <ul className={`nav-links ${menuOpen ? "show-menu" : ""}`}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/our-services">Services</Link></li>
+            <li><Link to="/contact-us">Contact Us</Link></li>
           </ul>
         </div>
-      </nav>
-      {/* Body Section */}
-      <section className="body">
+      </motion.nav>
+       {/* Body Section */}
+       <motion.section
+        className="body"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="text">
           <h1>Welcome</h1>
           <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -61,30 +84,49 @@ function Home() {
             voluptate culpa nesciunt delectus iste?
           </h4>
           <div className="bottom">
-            <button className="btn">
-            {/* <img src={img4} alt="Menu" className="menu-icon" /> */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn-"
+            >
               <span>Explore</span>
-            </button>
+            </motion.button>
           </div>
         </div>
-        <img src={img3} alt="Group Illustration" className="group-main" />
-      </section>
-      {/* Partners Section */}
-      <section className="partners">
-        <h2 className="partners-title">Partners</h2>
-        <h4 className="partners-heading">Lorem Ipsum Dolor</h4>
-        <p className="partners-description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        </p>
-      </section>
-      {/* Logos Section */}
-      <section className="logos">
-        <img src={img5} alt="Google Logo" className="logo google" />
-        <img src={img6} alt="Microsoft Logo" className="logo microsoft" />
-        <img src={img7} alt="Airbnb Logo" className="logo airbnb" />
-        <img src={img8} alt="Facebook Logo" className="logo facebook" />
-        <img src={img9} alt="Spotify Logo" className="logo spotify" />
-      </section>
+        <motion.img
+          src={img3}
+          alt="Group Illustration"
+          className="group-main"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        />
+      </motion.section>
+     {/* Logos Section */}
+     <motion.section
+        className="logos"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, scale: 0.8 },
+          visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.8, staggerChildren: 0.2 },
+          },
+        }}
+      >
+        {[img5, img6, img7, img8, img9].map((src, index) => (
+          <motion.img
+            key={`logo-${index}`}
+            src={src}
+            alt={`Logo ${index + 1}`}
+            className="logo"
+            whileHover={{ scale: 1.1 }}
+          />
+        ))}
+      </motion.section>
       {/* Learn Button */}
       <section className="learn">
         <button className="learn-button">

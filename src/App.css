@@ -17,6 +17,27 @@ body {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
+.splash-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000207; 
+  color: white;
+  font-size: 2rem;
+  font-family: 'Arial';
+}
+.splash-text {
+  animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* Navigation Bar */
 .nav {
   display: flex;
@@ -148,7 +169,7 @@ body {
     align-items: center;
     padding: 20px 40px;
     padding-bottom: 100px; /* Reduced from 150px to 100px */
-    gap: 20px; /* Reduced from 40px to 20px */
+    gap: 10px; /* Reduced from 20px to 10px */
   }
 }
   .body img.Group {
@@ -160,7 +181,7 @@ body {
     max-width: 50%; 
     order: 0; 
   }
-.btn {
+.btn- {
   display: flex; 
   align-items: center; 
   background-color: white; 
@@ -680,6 +701,210 @@ body, img {
   .images img {
     width: calc(48% - 10px); 
     margin: 0;
+  }
+}
+/* Plans Section Styles */
+.plans {
+  text-align: center; 
+  padding: 20px; 
+  margin: 20px auto; 
+  max-width: 800px; 
+}
+.plans-title {
+  font-size: 24px; 
+  margin-bottom: 10px; 
+}
+.plans-title span {
+  color: #74C69D; 
+}
+.plans-heading {
+  font-size: 32px; 
+  font-weight: bold; 
+  margin-bottom: 10px; 
+}
+.plans-description {
+  font-size: 16px; 
+  color: #555; 
+  line-height: 1.5; 
+}
+/* Media Query for Desktop Screens */
+@media (min-width: 1024px) {
+  .plans {
+    padding: 40px; 
+    max-width: 1000px; 
+  }
+  .plans-title {
+    font-size: 28px; 
+  }
+  .plans-heading {
+    font-size: 36px; 
+  }
+  .plans-description {
+    font-size: 18px; 
+  }
+}
+.amount-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 400px;
+  background-color: #f9f9f9;
+}
+.amount-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.amount-price {
+  font-size: 24px;
+  color: rgb(1, 14, 1);
+  margin: 10px 0;
+}
+.amount-description {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+.features-list li {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.check-icon {
+  height: 16px;
+  margin-right: 8px;
+}
+.btn {
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+/* Desktop Media Query */
+@media (min-width: 768px) {
+  .amount-sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .amount-section {
+    max-width: 300px;
+    flex: 1;
+  }
+}
+/* Contact Us Section */
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+  gap: 20px;
+}
+.contact-us h1,
+.contact-us p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contact-form {
+  width: 90%;
+}
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contact-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+.submit-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+.submit-button:hover {
+  background-color: #333333;
+}
+.mapswrapper {
+  width: 100%;
+}
+.mapswrapper iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 8px;
+}
+/* Mobile-first */
+@media (max-width: 767px) {
+  .contact-us {
+    flex-direction: column; 
+  }
+  .mapswrapper {
+    margin-bottom: 20px; 
+  }
+}
+/* Desktop View */
+@media (min-width: 768px) {
+  .contact-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 20px;
+    align-items: start; 
+  }
+  .contact-form {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-us h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .contact-us p {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  .contact-form .form-group {
+    text-align: left; 
+  }
+  .mapswrapper {
+    max-width: 100%;
+  }
+  .mapswrapper iframe {
+    height: 450px; 
   }
 }
 @keyframes App-logo-spin {
