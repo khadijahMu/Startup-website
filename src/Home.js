@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import './App.css';
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
-// import img3 from './assets/Group.png';
-// import img4 from './assets/Rectangle.svg';
+import img3 from './assets/Group.png';
 import img5 from './assets/XMLID_24_.svg';
 import img6 from './assets/XMLID_1_.svg';
 import img7 from './assets/XMLID_30_.svg';
@@ -23,7 +22,7 @@ import img19 from './assets/Group 36.svg';
 import img20 from './assets/Group 37.svg';
 import img21 from './assets/Group 38.svg';
 import img22 from './assets/Group 39.svg';
-import img24 from './assets/img dsktp.svg';
+import img24 from  './assets/img dsktp.png';
 import { Link } from 'react-router-dom';
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +45,7 @@ function Home() {
   }
   return (
     <div className="App">
-          {/* Menu Button */} {/* Navigation Bar */}
+      {/* Navigation Bar */}
       <motion.nav
         className="nav"
         initial={{ y: -50, opacity: 0 }}
@@ -69,42 +68,49 @@ function Home() {
           </ul>
         </div>
       </motion.nav>
-       {/* Body Section */}
-       <motion.section
-        className="body"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+      {/* Body Section */}
+      <motion.section
+  className="body"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <div className="text">
+    <h1>Welcome</h1>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <h4>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
+      nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum,
+      voluptate culpa nesciunt delectus iste?
+    </h4>
+    <div className="bottom">
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="btn-"
       >
-        <div className="text">
-          <h1>Welcome</h1>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
-          <h4>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit
-            nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum,
-            voluptate culpa nesciunt delectus iste?
-          </h4>
-          <div className="bottom">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-"
-            >
-              <span>Explore</span>
-            </motion.button>
-          </div>
-        </div>
-        <motion.img
-          src={img24}
-          alt="Group Illustration"
-          className="group-main"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        />
-      </motion.section>
-     {/* Logos Section */}
-     <motion.section
+        <span>Explore</span>
+      </motion.button>
+    </div>
+  </div>
+  {/* Picture element  */}
+  <motion.picture
+    initial={{ scale: 0.8, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 0.8 }}
+  >
+    {/* Desktop Image */}
+    <source srcSet={img24} media="(min-width: 768px)" />
+    {/* Mobile Image */}
+    <img
+      src={img3}
+      alt="Responsive Group Illustration"
+      className="group-main"
+    />
+  </motion.picture>
+</motion.section>
+      {/* Logos Section */}
+      <motion.section
         className="logos"
         initial="hidden"
         whileInView="visible"
@@ -131,7 +137,6 @@ function Home() {
       {/* Learn Button */}
       <section className="learn">
         <button className="learn-button">
-          {/* <img src={img4} alt="Learn Icon" className="learn-icon" /> */}
           <span>Learn More</span>
         </button>
       </section>
@@ -144,7 +149,6 @@ function Home() {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum, voluptate culpa nesciunt delectus iste?
           </p>
           <button className="learn-button">
-            {/* <img src={img4} alt="Learn Icon" className="learn-icon" /> */}
             <span>Learn More</span>
           </button>
         </div>
@@ -157,7 +161,6 @@ function Home() {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nemo hic quos, ab, dolor aperiam nobis cum est eos error ipsum, voluptate culpa nesciunt delectus iste?
           </p>
           <button className="learn-button">
-            {/* <img src={img4} alt="Learn Icon" className="learn-icon" /> */}
             <span>Learn More</span>
           </button>
         </div>
