@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import './App.css';
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
-import img3 from './assets/Group.png';
+// import img3 from './assets/Group.png';
 // import img4 from './assets/Rectangle.svg';
 import img5 from './assets/XMLID_24_.svg';
 import img6 from './assets/XMLID_1_.svg';
@@ -23,6 +23,7 @@ import img19 from './assets/Group 36.svg';
 import img20 from './assets/Group 37.svg';
 import img21 from './assets/Group 38.svg';
 import img22 from './assets/Group 39.svg';
+import img24 from './assets/img dsktp.svg';
 import { Link } from 'react-router-dom';
 function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -94,7 +95,7 @@ function Home() {
           </div>
         </div>
         <motion.img
-          src={img3}
+          src={img24}
           alt="Group Illustration"
           className="group-main"
           initial={{ scale: 0.8, opacity: 0 }}

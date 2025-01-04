@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion'; 
 import './App.css';
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
@@ -19,69 +20,114 @@ import img21 from './assets/Group 38.svg';
 import img22 from './assets/Group 39.svg';
 import img23 from './assets/Frame 43 (4).png';
 function Portfolio() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-    };
-    return (
-    <div className="App">
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  return (
+    <motion.div
+      className="App"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.5 } },
+      }}
+    >
       {/* Navigation Bar */}
-        <nav className="nav">
+      <motion.nav
+        className="nav"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="left">
-            <img src={img1} alt="Logo" className="logo" />
-            <h2>Start</h2>
+          <img src={img1} alt="Logo" className="logo" />
+          <h2>Start</h2>
         </div>
         <div className="right">
-          {/* Menu Button */}
-            <button className="menu-button" onClick={toggleMenu}>
+          <button className="menu-button" onClick={toggleMenu}>
             <img src={img2} alt="Menu" className="menu-icon" />
-            </button>
-          {/* Navigation Links */}
-            <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
-            <li><Link to="/">Home</Link></li>
+          </button>
+          <ul className={`nav-links ${menuOpen ? 'show-menu' : ''}`}>
+          <li><Link to="/">Home</Link></li>
             <li><Link to="/portfolio">Portfolio</Link></li>
-            <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            </ul>
+            <li><Link to="/our-services">Services</Link></li>
+            <li><Link to="/contact-us">Contact Us</Link></li>
+              </ul>
         </div>
-        </nav>
-       {/* Portfolio Content */}
-        <main className="content">
+      </motion.nav>
+      {/* Portfolio Content */}
+      <motion.main
+        className="content"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <p><span>Works</span></p>
         <p>Portfolio</p>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-        <section className="images">
-            <img src={img8} alt="img6" className="img6" />
-            <img src={img4} alt="img2" className="img2" />
-            <img src={img23} alt="img7" className="img7" />
-            <img src={img5} alt="img3" className="img3" />
-            <img src={img6} alt="img4" className="img4" />
-            <img src={img7} alt="img5" className="img5" />
-            <img src={img3} alt="img7" className="img7" />
-            <img src={img9} alt="img7" className="img7" />
-        </section>
-        </main>
+        <motion.section
+          className="images"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+        >
+          {[img8, img4, img23, img5, img6, img7, img3, img9].map((src, index) => (
+            <motion.img
+              key={index}
+              src={src}
+              alt={`img-${index + 1}`}
+              className={`img${index + 1}`}
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+            />
+          ))}
+        </motion.section>
+      </motion.main>
       {/* Learn Button */}
-        <section className="learn">
-        <button className="learn-button">
-            {/* <img src={img4i} alt="Learn Icon" className="learn-icon" /> */}
-            <span>Learn More</span>
-        </button>
-        </section>
+      <motion.section
+        className="learn"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.button
+          className="learn-button"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span>Learn More</span>
+        </motion.button>
+      </motion.section>
       {/* Footer Section */}
-        <footer className="footer">
+      <motion.footer
+        className="footer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="social-icons">
-            <img src={img16} alt="Facebook Logo" className="facebook" />
-            <img src={img17} alt="Instagram Logo" className="instagram" />
-            <img src={img18} alt="Twitter Logo" className="twitter" />
-            <img src={img19} alt="Pinterest Logo" className="pinterest" />
-            <img src={img20} alt="TikTok Logo" className="tiktok" />
-            <img src={img21} alt="WhatsApp Logo" className="whatsapp" />
-            <img src={img22} alt="YouTube Logo" className="youtube" />
+          {[img16, img17, img18, img19, img20, img21, img22].map((src, index) => (
+            <motion.img
+              key={`social-icon-${index}`}
+              src={src}
+              alt={`Social Icon ${index + 1}`}
+              className="icon"
+              whileHover={{ scale: 1.2 }}
+            />
+          ))}
         </div>
         <p className="footer-text">© Start, 2022. All rights reserved.</p>
-        </footer>
-    </div>
-    );
+      </motion.footer>
+    </motion.div>
+  );
 }
 export default Portfolio;
