@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion"; 
 import img1 from './assets/Group 1.svg';
 import img2 from './assets/Vector.svg';
 import img16 from './assets/Group 33.svg';
@@ -10,28 +11,44 @@ import img20 from './assets/Group 37.svg';
 import img21 from './assets/Group 38.svg';
 import img22 from './assets/Group 39.svg';
 const ContactUs = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState(""); 
+  const [email, setEmail] = useState(""); 
+  const [message, setMessage] = useState(""); 
   const [formSubmitted, setFormSubmitted] = useState(false); 
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // Log Form Data
     console.log("Form Submitted:");
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Message:", message);
+    // Display Success Message
     setFormSubmitted(true);
-    // Reset the form fields
+    // Reset Form Fields
     setName("");
     setEmail("");
     setMessage("");
+    // Hide Message After 3 Seconds
     setTimeout(() => setFormSubmitted(false), 3000);
   };
   return (
-    <div className="App">
+    <motion.div
+      className="App"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { duration: 0.5 } },
+      }}
+    >
       {/* Navigation Bar */}
-      <nav className="nav">
+      <motion.nav
+        className="nav"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="left">
           <img src={img1} alt="Logo" className="logo" />
           <h2>Start</h2>
@@ -44,22 +61,40 @@ const ContactUs = () => {
             <img src={img2} alt="Menu" className="menu-icon" />
           </button>
           <ul className={`nav-links ${menuOpen ? "show-menu" : ""}`}>
-            <li><Link to="/">Home</Link></li>
+          <li><Link to="/">Home</Link></li>
             <li><Link to="/portfolio">Portfolio</Link></li>
             <li><Link to="/our-services">Services</Link></li>
-            <li><Link to="/contact-us">Contact Us</Link></li>
-          </ul>
+            <li><Link to="/contact-us">Contact Us</Link></li> 
+            </ul>
         </div>
-      </nav>
+      </motion.nav>
       {/* Contact Us Content */}
-      <div className="contact-us">
+      <motion.div
+        className="contact-us"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <h1>Contact Us</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <p>Feel free to reach out to us with your queries or feedback.</p>
         {/* Feedback Message */}
         {formSubmitted && (
-          <p className="feedback-message">Thank you! Your message has been sent.</p>
+          <motion.p
+            className="feedback-message"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Thank you! Your message has been sent.
+          </motion.p>
         )}
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <motion.form
+          className="contact-form"
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+        >
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
@@ -91,10 +126,24 @@ const ContactUs = () => {
               required
             ></textarea>
           </div>
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
+          <motion.button
+            type="submit"
+            className="submit-button"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Submit
+          </motion.button>
+        </motion.form>
         {/* Google Map */}
-        <div className="mapswrapper" style={{ marginTop: "20px" }}>
+        <motion.div
+          className="mapswrapper"
+          style={{ marginTop: "20px" }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <iframe
             width="800"
             height="450"
@@ -104,22 +153,29 @@ const ContactUs = () => {
             title="Location Map"
             style={{ border: "0", width: "100%", height: "450px" }}
           ></iframe>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       {/* Footer Section */}
-      <footer className="footer">
+      <motion.footer
+        className="footer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="social-icons">
-          <img src={img16} alt="Facebook Logo" className="icon facebook" />
-          <img src={img17} alt="Instagram Logo" className="icon instagram" />
-          <img src={img18} alt="Twitter Logo" className="icon twitter" />
-          <img src={img19} alt="Pinterest Logo" className="icon pinterest" />
-          <img src={img20} alt="TikTok Logo" className="icon tiktok" />
-          <img src={img21} alt="WhatsApp Logo" className="icon whatsapp" />
-          <img src={img22} alt="YouTube Logo" className="icon youtube" />
+          {[img16, img17, img18, img19, img20, img21, img22].map((src, index) => (
+            <motion.img
+              key={`social-icon-${index}`}
+              src={src}
+              alt={`Social Icon ${index + 1}`}
+              className="icon"
+              whileHover={{ scale: 1.2 }}
+            />
+          ))}
         </div>
         <p className="footer-text">© Start, 2022. All rights reserved.</p>
-      </footer>
-    </div>
+      </motion.footer>
+    </motion.div>
   );
 };
 export default ContactUs;

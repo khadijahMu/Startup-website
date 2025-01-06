@@ -224,6 +224,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Email:** khadeejahmuazu@gmail.com
 
 - **GitHub:** [your-username](https://github.com/khadijahMu)
+- loom video link: https://www.loom.com/share/c09122d9efe2452ebd7340093fbd0c5c?sid=a8bd1f67-32f4-4f23-b9dc-791cb08c19de
 
 
 
